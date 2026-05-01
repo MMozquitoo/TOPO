@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Quiz } from "@/data/week1";
+import { Quiz } from "@/lib/types";
 import { micro, spring, shake, fadeUp, tapScale } from "@/lib/motion";
 
 export default function QuizBlock({

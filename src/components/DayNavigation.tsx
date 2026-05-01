@@ -5,11 +5,15 @@ import { motion } from "framer-motion";
 import { micro, spring, fadeUp, tapScale } from "@/lib/motion";
 
 export default function DayNavigation({
-  currentDay,
   completed,
+  prevDay,
+  nextDay,
+  completeHref,
 }: {
-  currentDay: number;
   completed: boolean;
+  prevDay: number | null;
+  nextDay: number | null;
+  completeHref?: string;
 }) {
   return (
     <motion.div
@@ -18,12 +22,12 @@ export default function DayNavigation({
       animate={fadeUp.animate}
       transition={spring}
     >
-      {currentDay > 1 ? (
+      {prevDay !== null ? (
         <Link
-          href={`/day/${currentDay - 1}`}
+          href={`/day/${prevDay}`}
           className="text-sm text-neutral-500 hover:text-neutral-900 dark:hover:text-neutral-100"
         >
-          ← Day {currentDay - 1}
+          ← Day {prevDay}
         </Link>
       ) : (
         <Link
@@ -33,11 +37,11 @@ export default function DayNavigation({
           ← Home
         </Link>
       )}
-      {currentDay < 7 ? (
+      {nextDay !== null ? (
         completed ? (
           <motion.div whileTap={tapScale} transition={micro}>
             <Link
-              href={`/day/${currentDay + 1}`}
+              href={`/day/${nextDay}`}
               className="inline-block px-5 py-2.5 bg-neutral-900 dark:bg-neutral-100 text-white dark:text-black rounded-lg text-sm font-medium"
             >
               Next Day →
@@ -51,7 +55,7 @@ export default function DayNavigation({
       ) : completed ? (
         <motion.div whileTap={tapScale} transition={micro}>
           <Link
-            href="/complete"
+            href={completeHref || "/complete"}
             className="inline-block px-5 py-2.5 bg-green-600 text-white rounded-lg text-sm font-medium"
           >
             See Your Results →

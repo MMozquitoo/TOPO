@@ -3,7 +3,7 @@
 import { useParams } from "next/navigation";
 import { useEffect, useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { week1 } from "@/data/week1";
+import { getDayData, getWeekForDay, getWeekDayIndex } from "@/lib/curriculum";
 import {
   getProgress,
   markDayComplete,
@@ -17,11 +17,14 @@ import LessonBlock from "@/components/LessonBlock";
 import ExerciseBlock from "@/components/ExerciseBlock";
 import QuizBlock from "@/components/QuizBlock";
 import DayNavigation from "@/components/DayNavigation";
+import HomeworkBlock from "@/components/HomeworkBlock";
 
 export default function DayPage() {
   const params = useParams();
   const dayNum = Number(params.id);
-  const dayData = week1.find((d) => d.day === dayNum);
+  const dayData = getDayData(dayNum);
+  const week = getWeekForDay(dayNum);
+  const pos = getWeekDayIndex(dayNum);
 
   const [exerciseDone, setExerciseDone] = useState(false);
   const [quizDone, setQuizDone] = useState(false);
@@ -51,7 +54,7 @@ export default function DayPage() {
     }
   }, [exerciseDone, quizDone, showOutput, dayNum]);
 
-  if (!dayData) {
+  if (!dayData || !week || !pos) {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <p className="text-neutral-500">Day not found</p>
@@ -59,11 +62,17 @@ export default function DayPage() {
     );
   }
 
+  const weekDays = week.days;
+  const dayIndex = pos.dayIndex;
+  const prevDay = dayIndex > 0 ? weekDays[dayIndex - 1].day : null;
+  const nextDay = dayIndex < weekDays.length - 1 ? weekDays[dayIndex + 1].day : null;
+  const isLastDayOfWeek = dayIndex === weekDays.length - 1;
+
   return (
     <main className="min-h-screen bg-white dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100">
       <AnimatedPage>
         <div className="max-w-2xl mx-auto px-6 py-12">
-          <ProgressBar currentDay={dayNum} />
+          <ProgressBar currentDay={dayNum} days={weekDays} />
 
           <h1 className="text-2xl font-semibold tracking-tight mb-8">
             Day {dayData.day}: {dayData.title}
@@ -118,9 +127,15 @@ export default function DayPage() {
               )}
             </AnimatePresence>
 
+            {showOutput && dayData.homework && dayData.homework.length > 0 && (
+              <HomeworkBlock items={dayData.homework} />
+            )}
+
             <DayNavigation
-              currentDay={dayNum}
               completed={showOutput}
+              prevDay={prevDay}
+              nextDay={nextDay}
+              completeHref={isLastDayOfWeek ? `/complete/${week.id}` : undefined}
             />
           </div>
         </div>

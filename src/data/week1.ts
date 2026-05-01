@@ -1,32 +1,6 @@
-export interface QuizOption {
-  label: string;
-  value: string;
-}
+import { DayData } from "@/lib/types";
 
-export interface Exercise {
-  type: "input" | "terminal" | "choice";
-  prompt: string;
-  placeholder?: string;
-  validator: (input: string) => { correct: boolean; hint: string };
-  terminalCommands?: Record<string, (args: string) => string>;
-}
-
-export interface Quiz {
-  question: string;
-  options: QuizOption[];
-  correct: string;
-  explanation: string;
-}
-
-export interface DayData {
-  day: number;
-  title: string;
-  hook: string;
-  lesson: string[];
-  exercise: Exercise;
-  quiz: Quiz;
-  output: string;
-}
+export { type QuizOption, type Exercise, type Quiz, type DayData } from "@/lib/types";
 
 export const week1: DayData[] = [
   {
@@ -66,6 +40,18 @@ export const week1: DayData[] = [
       explanation: "Option B is the phishing URL. The actual domain is login-secure.tk (a free Tokelau domain often used by attackers). 'google.com' is just a subdomain — a classic trick to make the URL look legitimate at first glance.",
     },
     output: "Today you learned how to detect phishing URLs by reading domains right-to-left and spotting red flags in suspicious links.",
+    homework: [
+      {
+        title: "Google Phishing Quiz",
+        url: "https://phishingquiz.withgoogle.com/",
+        description: "Test your phishing detection skills with real examples curated by Google's security team.",
+      },
+      {
+        title: "OWASP Phishing Overview",
+        url: "https://owasp.org/www-community/attacks/Phishing",
+        description: "OWASP's reference on phishing attack vectors, techniques, and defenses.",
+      },
+    ],
   },
   {
     day: 2,
@@ -80,6 +66,12 @@ export const week1: DayData[] = [
     exercise: {
       type: "choice",
       prompt: "You receive this message from your \"CEO\" on Slack:\n\n\"Hey, I need you to buy 5 Apple gift cards ($200 each) for a client meeting ASAP. Don't tell anyone — it's a surprise. Send me the codes when you have them.\"\n\nWhat's the best response?",
+      choices: [
+        "Buy the gift cards immediately — the CEO asked",
+        "Reply asking for more details on Slack",
+        "Call or visit the CEO in person to verify the request",
+        "Ignore the message entirely",
+      ],
       placeholder: "",
       validator: (input: string) => {
         const choice = input.trim().toUpperCase();
@@ -110,6 +102,18 @@ export const week1: DayData[] = [
       explanation: "Social engineering targets human psychology — trust, fear, urgency, and helpfulness. Unlike software vulnerabilities, you can't \"patch\" human nature. That's why security awareness training is critical: your brain is the first and last line of defense.",
     },
     output: "Today you learned how to recognize social engineering tactics and defend against manipulation by verifying requests through separate channels.",
+    homework: [
+      {
+        title: "SANS Social Engineering Infographic",
+        url: "https://www.sans.org/security-awareness-training/resources/social-engineering-infographic/",
+        description: "Visual breakdown of social engineering tactics, statistics, and defenses from SANS.",
+      },
+      {
+        title: "Krebs on Security — BEC Scams",
+        url: "https://krebsonsecurity.com/tag/business-email-compromise/",
+        description: "Real-world business email compromise case studies from Brian Krebs.",
+      },
+    ],
   },
   {
     day: 3,
@@ -148,6 +152,18 @@ export const week1: DayData[] = [
       explanation: "Without salt, every user with the password \"password123\" gets the same hash. An attacker with a rainbow table can crack them all at once. Salt adds randomness so identical passwords produce unique hashes, forcing attackers to crack each one individually.",
     },
     output: "Today you learned how password hashing and salting protect credentials — and why plain-text storage is a catastrophic security failure.",
+    homework: [
+      {
+        title: "CrackStation — Password Hash Lookup",
+        url: "https://crackstation.net/",
+        description: "See how fast unsalted hashes can be cracked using precomputed rainbow tables.",
+      },
+      {
+        title: "How bcrypt Works — Auth0",
+        url: "https://auth0.com/blog/hashing-in-action-understanding-bcrypt/",
+        description: "Deep dive into bcrypt — why it's slow by design and how salt rounds work.",
+      },
+    ],
   },
   {
     day: 4,
@@ -189,6 +205,18 @@ export const week1: DayData[] = [
       explanation: "The TLS handshake has two critical jobs: (1) verify the server is who it claims to be via its certificate, and (2) negotiate encryption keys to create a secure tunnel. Only after both steps does your browser start sending actual data.",
     },
     output: "Today you learned how to read TLS certificates, understand HTTPS encryption, and why you should never ignore browser security warnings.",
+    homework: [
+      {
+        title: "SSL Labs — Test a Server",
+        url: "https://www.ssllabs.com/ssltest/",
+        description: "Run a real TLS analysis on any website and interpret the results using what you learned today.",
+      },
+      {
+        title: "Let's Encrypt — How It Works",
+        url: "https://letsencrypt.org/how-it-works/",
+        description: "Understand how the world's largest free certificate authority automates TLS certificate issuance.",
+      },
+    ],
   },
   {
     day: 5,
@@ -243,6 +271,18 @@ export const week1: DayData[] = [
       explanation: "Multiple rapid failed attempts followed by a successful login from the same IP is the classic signature of a brute-force attack. The attacker systematically tried passwords until finding the right one. This is why account lockout policies and fail2ban are essential defenses.",
     },
     output: "Today you learned terminal basics — navigating files, reading logs, and spotting suspicious activity through the command line.",
+    homework: [
+      {
+        title: "OverTheWire Bandit — Wargame",
+        url: "https://overthewire.org/wargames/bandit/",
+        description: "Learn Linux command-line skills through a gamified CTF — the perfect next step after today's exercises.",
+      },
+      {
+        title: "ExplainShell",
+        url: "https://explainshell.com/",
+        description: "Paste any shell command and get a visual breakdown of what each flag and argument does.",
+      },
+    ],
   },
   {
     day: 6,
@@ -302,6 +342,18 @@ export const week1: DayData[] = [
       explanation: "Multiple red flags: brand-new registration, free TLD (commonly abused by attackers because there's no cost barrier), and bulletproof hosting (providers that ignore abuse complaints). Each flag alone warrants caution — together, they strongly indicate malicious intent.",
     },
     output: "Today you learned how to use ping, whois, traceroute, and nslookup to investigate domains and diagnose network issues like a security analyst.",
+    homework: [
+      {
+        title: "ViewDNS.info — Online Recon Tools",
+        url: "https://viewdns.info/",
+        description: "Run whois, reverse IP, DNS lookups, and port scans from your browser — practice recon without installing anything.",
+      },
+      {
+        title: "Shodan — Search Engine for IoT",
+        url: "https://www.shodan.io/",
+        description: "Explore the world's most exposed devices — see what happens when network services are left unprotected.",
+      },
+    ],
   },
   {
     day: 7,
@@ -340,5 +392,17 @@ export const week1: DayData[] = [
       explanation: "Defense in depth combines multiple layers: human awareness (phishing/social engineering training), authentication security (hashed passwords), encryption (HTTPS/TLS), and network controls (firewalls). No single layer is perfect, but together they create a resilient security posture. This is the core lesson of Week 1.",
     },
     output: "You survived the week! You've unlocked 7 essential cybersecurity skills: phishing detection, social engineering defense, password security, HTTPS/TLS analysis, terminal navigation, network reconnaissance, and firewall configuration.",
+    homework: [
+      {
+        title: "TryHackMe — Pre-Security Path",
+        url: "https://tryhackme.com/paths",
+        description: "Free guided learning path covering networking, Linux, and web security fundamentals — great Week 1 reinforcement.",
+      },
+      {
+        title: "NIST Cybersecurity Framework",
+        url: "https://www.nist.gov/cyberframework",
+        description: "The official U.S. government framework for managing cybersecurity risk — see how Week 1 concepts map to real-world standards.",
+      },
+    ],
   },
 ];

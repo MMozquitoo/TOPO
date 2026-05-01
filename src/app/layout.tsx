@@ -14,8 +14,8 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Cybersec Daily — Learn Security in 7 Days",
-  description: "One concept per day. Interactive exercises, real-world scenarios, and hands-on practice to build your cybersecurity fundamentals.",
+  title: "Cybersec Daily — Learn Security One Day at a Time",
+  description: "Interactive cybersecurity training. Real-world scenarios, hands-on exercises, and guided firmware analysis. From phishing to hardware hacking.",
 };
 
 export default function RootLayout({

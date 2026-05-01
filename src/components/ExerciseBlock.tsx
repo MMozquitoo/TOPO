@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Exercise } from "@/data/week1";
+import { Exercise } from "@/lib/types";
 import { micro, spring, fadeUp, staggerContainer, staggerItem, tapScale } from "@/lib/motion";
 
 interface TerminalLine {
@@ -205,35 +205,34 @@ export default function ExerciseBlock({
       </p>
       {isChoice ? (
         <div className="space-y-2">
-          {["A", "B", "C", "D"].map((opt) => (
-            <motion.button
-              key={opt}
-              whileTap={tapScale}
-              transition={micro}
-              onClick={() => {
-                setInput(opt);
-                const result = exercise.validator(opt);
-                setFeedback(result);
-                if (result.correct && !completed) {
-                  setCompleted(true);
-                  onComplete();
-                }
-              }}
-              className={`w-full text-left px-4 py-3 rounded-lg border text-sm ${
-                input === opt
-                  ? feedback?.correct
-                    ? "border-green-500 bg-green-50 dark:bg-green-950"
-                    : "border-red-500 bg-red-50 dark:bg-red-950"
-                  : "border-neutral-200 dark:border-neutral-800"
-              }`}
-            >
-              <span className="font-semibold">{opt}.</span>{" "}
-              {opt === "A" && "Buy the gift cards immediately — the CEO asked"}
-              {opt === "B" && "Reply asking for more details on Slack"}
-              {opt === "C" && "Call or visit the CEO in person to verify the request"}
-              {opt === "D" && "Ignore the message entirely"}
-            </motion.button>
-          ))}
+          {(exercise.choices || ["A", "B", "C", "D"]).map((text, i) => {
+            const label = String.fromCharCode(65 + i);
+            return (
+              <motion.button
+                key={label}
+                whileTap={tapScale}
+                transition={micro}
+                onClick={() => {
+                  setInput(label);
+                  const result = exercise.validator(label);
+                  setFeedback(result);
+                  if (result.correct && !completed) {
+                    setCompleted(true);
+                    onComplete();
+                  }
+                }}
+                className={`w-full text-left px-4 py-3 rounded-lg border text-sm ${
+                  input === label
+                    ? feedback?.correct
+                      ? "border-green-500 bg-green-50 dark:bg-green-950"
+                      : "border-red-500 bg-red-50 dark:bg-red-950"
+                    : "border-neutral-200 dark:border-neutral-800"
+                }`}
+              >
+                <span className="font-semibold">{label}.</span> {text}
+              </motion.button>
+            );
+          })}
         </div>
       ) : (
         <div className="flex gap-2">
