@@ -289,7 +289,7 @@ export const week8: DayData[] = [
       },
       {
         title: "Analysis of TP-Link Archer A7 Vulnerability",
-        url: "https://web.archive.org/web/2024/https://starlabs.sg/blog/2020/10-analysis-and-exploitation-of-a-recent-tp-link-archer-a7-vulnerability/",
+        url: "https://www.thezdi.com/blog/2020/4/6/exploiting-the-tp-link-archer-c7-at-pwn2own-tokyo",
         description: "Star Labs' deep analysis of another TP-Link vulnerability — demonstrating that the same vulnerability patterns repeat across product lines."
       }
     ],

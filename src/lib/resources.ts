@@ -301,7 +301,7 @@ export const resources: Resource[] = [
   {
     id: "blog-uart-nec",
     title: "Bypassing Password via UART on NEC Router",
-    url: "https://web.archive.org/web/2024/https://faradaysec.com/bypassing-password-protection-and-getting-a-shell-through-uart-in-nec-aterm-wr8165n-wi-fi-router/",
+    url: "https://medium.com/faraday/bypassing-password-protection-and-getting-a-shell-through-uart-in-nec-aterm-wr8165n-wi-fi-router-975198e3b4a",
     category: "blog",
     device: ["router"],
     technique: ["hardware-interfaces"],
@@ -470,7 +470,7 @@ export const resources: Resource[] = [
   {
     id: "writeup-lorex-camera",
     title: "Pwn2Own Ireland 2024: Exploiting Lorex Camera",
-    url: "https://web.archive.org/web/2024/https://blog.infosectcbr.com.au/2024/12/exploiting-lorex-2k-indoor-wifi-at.html",
+    url: "https://www.rapid7.com/blog/post/2024/12/03/lorex-2k-indoor-wi-fi-security-camera-multiple-vulnerabilities-fixed/",
     category: "writeup",
     device: ["camera"],
     technique: ["exploitation"],
@@ -1201,7 +1201,7 @@ export const resources: Resource[] = [
   {
     id: "blog-zyxel-zysh-vulns",
     title: "Multiple Vulnerabilities in Zyxel zysh",
-    url: "https://web.archive.org/web/2024/https://security.humanativaspa.it/multiple-vulnerabilities-in-zyxel-zysh/",
+    url: "https://hnsecurity.it/blog/multiple-vulnerabilities-in-zyxel-zysh/",
     category: "blog",
     device: ["router"],
     technique: ["exploitation", "reverse-engineering"],
@@ -1729,7 +1729,7 @@ export const resources: Resource[] = [
   {
     id: "blog-ble-smartband-re",
     title: "Reverse Engineer a Bluetooth (BLE) SmartBand",
-    url: "https://web.archive.org/web/2024/https://medium.com/@shelladdicted/reverse-engineer-a-bluetooth-ble-smartband-91ee10129217",
+    url: "https://reverse-engineering-ble-devices.readthedocs.io/en/latest/",
     category: "blog",
     device: ["smart-home"],
     technique: ["wireless", "reverse-engineering"],
@@ -1896,7 +1896,7 @@ export const resources: Resource[] = [
   {
     id: "blog-ghidra-semgrep-vulns",
     title: "Automating Binary Vulnerability Discovery with Ghidra and Semgrep",
-    url: "https://web.archive.org/web/2024/https://security.humanativaspa.it/automating-binary-vulnerability-discovery-with-ghidra-and-semgrep/",
+    url: "https://hnsecurity.it/blog/automating-binary-vulnerability-discovery-with-ghidra-and-semgrep/",
     category: "blog",
     device: ["general", "router"],
     technique: ["reverse-engineering", "exploitation"],
@@ -2162,7 +2162,7 @@ export const resources: Resource[] = [
   {
     id: "writeup-tplink-archer-a7",
     title: "Analysis & Exploitation of a TP-Link Archer A7 Vulnerability",
-    url: "https://web.archive.org/web/2024/https://starlabs.sg/blog/2020/10-analysis-and-exploitation-of-a-recent-tp-link-archer-a7-vulnerability/",
+    url: "https://www.thezdi.com/blog/2020/4/6/exploiting-the-tp-link-archer-c7-at-pwn2own-tokyo",
     category: "writeup",
     device: ["router"],
     technique: ["exploitation", "reverse-engineering"],

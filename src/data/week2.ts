@@ -130,7 +130,7 @@ export const week2: DayData[] = [
       },
       {
         title: "Bypassing password protection via UART on NEC router",
-        url: "https://web.archive.org/web/2024/https://faradaysec.com/bypassing-password-protection-and-getting-a-shell-through-uart-in-nec-aterm-wr8165n-wi-fi-router/",
+        url: "https://medium.com/faraday/bypassing-password-protection-and-getting-a-shell-through-uart-in-nec-aterm-wr8165n-wi-fi-router-975198e3b4a",
         description: "Step-by-step walkthrough of getting root access through UART on a real Wi-Fi router."
       },
       {

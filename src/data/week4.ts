@@ -310,7 +310,7 @@ export const week4: DayData[] = [
     homework: [
       {
         title: "Automating Binary Vulnerability Discovery with Ghidra and Semgrep",
-        url: "https://web.archive.org/web/2024/https://security.humanativaspa.it/automating-binary-vulnerability-discovery-with-ghidra-and-semgrep/",
+        url: "https://hnsecurity.it/blog/automating-binary-vulnerability-discovery-with-ghidra-and-semgrep/",
         description: "Advanced tutorial on writing automated rules to find vulnerable code patterns in decompiled firmware using Ghidra and Semgrep."
       },
       {

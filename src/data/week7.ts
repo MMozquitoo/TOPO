@@ -51,7 +51,7 @@ export const week7: DayData[] = [
     homework: [
       {
         title: "Reverse Engineer a Bluetooth BLE SmartBand",
-        url: "https://web.archive.org/web/2024/https://medium.com/@shelladdicted/reverse-engineer-a-bluetooth-ble-smartband-91ee10129217",
+        url: "https://reverse-engineering-ble-devices.readthedocs.io/en/latest/",
         description: "Step-by-step walkthrough of intercepting BLE traffic from a fitness band, decoding GATT services, and reading private health data."
       },
       {

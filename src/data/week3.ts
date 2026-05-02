@@ -57,7 +57,7 @@ export const week3: DayData[] = [
       },
       {
         title: "No Hardware, No Problem: Emulation and Exploitation",
-        url: "https://web.archive.org/web/2024/https://blog.grimm-co.com/2022/04/no-hardware-no-problem-emulation-and.html",
+        url: "https://grimmcyber.com/no-hardware-no-problem-emulation-and-exploitation/",
         description: "GRIMM walks through emulating and exploiting a real embedded device without physical hardware access."
       },
       {
