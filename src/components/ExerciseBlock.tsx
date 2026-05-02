@@ -126,13 +126,19 @@ function TerminalSimulator({ exercise }: { exercise: Exercise }) {
 export default function ExerciseBlock({
   exercise,
   onComplete,
+  initialDone = false,
 }: {
   exercise: Exercise;
   onComplete: () => void;
+  initialDone?: boolean;
 }) {
   const [input, setInput] = useState("");
   const [feedback, setFeedback] = useState<{ correct: boolean; hint: string } | null>(null);
   const [completed, setCompleted] = useState(false);
+
+  useEffect(() => {
+    if (initialDone) setCompleted(true);
+  }, [initialDone]);
 
   const handleSubmit = () => {
     const result = exercise.validator(input);

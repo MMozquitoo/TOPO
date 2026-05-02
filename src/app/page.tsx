@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { weeks } from "@/lib/curriculum";
-import { getProgress } from "@/lib/progress";
+import { getProgress, exportProgress, importProgress } from "@/lib/progress";
 import AnimatedPage from "@/components/AnimatedPage";
 import AnimatedCard from "@/components/AnimatedCard";
 import { motion } from "framer-motion";
@@ -11,6 +11,10 @@ import { micro, tapScale, fadeUp, spring } from "@/lib/motion";
 
 export default function Home() {
   const [completed, setCompleted] = useState<number[]>([]);
+  const [syncOpen, setSyncOpen] = useState(false);
+  const [syncCode, setSyncCode] = useState("");
+  const [importCode, setImportCode] = useState("");
+  const [importStatus, setImportStatus] = useState<"idle" | "success" | "error">("idle");
 
   useEffect(() => {
     setCompleted(getProgress().completedDays);
@@ -119,13 +123,93 @@ export default function Home() {
             })}
           </div>
 
-          <div className="mt-16 pt-8 border-t border-neutral-200 dark:border-neutral-800 text-center">
-            <Link
-              href="/resources"
-              className="text-sm text-neutral-500 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors"
-            >
-              Browse the Resource Library →
-            </Link>
+          <div className="mt-16 pt-8 border-t border-neutral-200 dark:border-neutral-800">
+            <div className="text-center mb-6">
+              <Link
+                href="/resources"
+                className="text-sm text-neutral-500 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors"
+              >
+                Browse the Resource Library →
+              </Link>
+            </div>
+
+            <div className="text-center">
+              <button
+                onClick={() => {
+                  setSyncOpen(!syncOpen);
+                  if (!syncOpen) setSyncCode(exportProgress());
+                  setImportStatus("idle");
+                }}
+                className="text-xs text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-300 transition-colors"
+              >
+                {syncOpen ? "Close" : "Sync progress between devices"}
+              </button>
+
+              {syncOpen && (
+                <motion.div
+                  initial={fadeUp.initial}
+                  animate={fadeUp.animate}
+                  transition={spring}
+                  className="mt-4 p-5 rounded-xl border border-neutral-200 dark:border-neutral-800 text-left space-y-4"
+                >
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-widest text-neutral-400 mb-2">
+                      Export from this device
+                    </p>
+                    <div className="flex gap-2">
+                      <input
+                        type="text"
+                        readOnly
+                        value={syncCode}
+                        className="flex-1 px-3 py-2 rounded-lg border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-900 text-xs font-mono outline-none truncate"
+                      />
+                      <button
+                        onClick={() => navigator.clipboard.writeText(syncCode)}
+                        className="px-3 py-2 rounded-lg bg-neutral-900 dark:bg-neutral-100 text-white dark:text-black text-xs font-medium shrink-0"
+                      >
+                        Copy
+                      </button>
+                    </div>
+                  </div>
+
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-widest text-neutral-400 mb-2">
+                      Import from another device
+                    </p>
+                    <div className="flex gap-2">
+                      <input
+                        type="text"
+                        value={importCode}
+                        onChange={(e) => { setImportCode(e.target.value); setImportStatus("idle"); }}
+                        placeholder="Paste code here"
+                        className="flex-1 px-3 py-2 rounded-lg border border-neutral-200 dark:border-neutral-800 bg-transparent text-xs font-mono outline-none"
+                      />
+                      <button
+                        onClick={() => {
+                          if (importProgress(importCode.trim())) {
+                            setImportStatus("success");
+                            setCompleted(getProgress().completedDays);
+                            setSyncCode(exportProgress());
+                            setImportCode("");
+                          } else {
+                            setImportStatus("error");
+                          }
+                        }}
+                        className="px-3 py-2 rounded-lg bg-neutral-900 dark:bg-neutral-100 text-white dark:text-black text-xs font-medium shrink-0"
+                      >
+                        Import
+                      </button>
+                    </div>
+                    {importStatus === "success" && (
+                      <p className="text-xs text-green-600 mt-1">Progress merged successfully.</p>
+                    )}
+                    {importStatus === "error" && (
+                      <p className="text-xs text-red-500 mt-1">Invalid code. Copy the full code from the other device.</p>
+                    )}
+                  </div>
+                </motion.div>
+              )}
+            </div>
           </div>
         </div>
       </AnimatedPage>

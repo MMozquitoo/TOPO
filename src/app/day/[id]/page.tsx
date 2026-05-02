@@ -99,9 +99,10 @@ export default function DayPage() {
             <ExerciseBlock
               exercise={dayData.exercise}
               onComplete={handleExerciseComplete}
+              initialDone={exerciseDone}
             />
 
-            <QuizBlock quiz={dayData.quiz} onCorrect={handleQuizCorrect} />
+            <QuizBlock quiz={dayData.quiz} onCorrect={handleQuizCorrect} initialDone={quizDone} />
 
             <AnimatePresence>
               {showOutput && (

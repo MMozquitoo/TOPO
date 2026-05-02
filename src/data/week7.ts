@@ -51,7 +51,7 @@ export const week7: DayData[] = [
     homework: [
       {
         title: "Reverse Engineer a Bluetooth BLE SmartBand",
-        url: "https://medium.com/@shelladdicted/reverse-engineer-a-bluetooth-ble-smartband-91ee10129217",
+        url: "https://web.archive.org/web/2024/https://medium.com/@shelladdicted/reverse-engineer-a-bluetooth-ble-smartband-91ee10129217",
         description: "Step-by-step walkthrough of intercepting BLE traffic from a fitness band, decoding GATT services, and reading private health data."
       },
       {
@@ -264,9 +264,9 @@ export const week7: DayData[] = [
         description: "Kaspersky researchers found critical vulnerabilities in popular smart pet feeders — WiFi credential theft, camera access, and feeding schedule manipulation."
       },
       {
-        title: "Philips Hue Bridge Investigations",
-        url: "https://gh0stshell.cc/philips-hue-bridge-investigations-part-i",
-        description: "Deep dive into the Zigbee-based Philips Hue ecosystem — firmware extraction, protocol analysis, and vulnerability discovery."
+        title: "Hacking Philips Hue Smart Lights (Check Point Research)",
+        url: "https://research.checkpoint.com/2020/dont-be-silly-its-only-a-lightbulb/",
+        description: "Check Point's research on exploiting Philips Hue smart bulbs via Zigbee — firmware vulnerabilities, protocol weaknesses, and network pivoting."
       }
     ],
   },

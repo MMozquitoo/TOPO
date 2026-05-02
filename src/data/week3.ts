@@ -57,7 +57,7 @@ export const week3: DayData[] = [
       },
       {
         title: "No Hardware, No Problem: Emulation and Exploitation",
-        url: "https://blog.grimm-co.com/2022/04/no-hardware-no-problem-emulation-and.html",
+        url: "https://web.archive.org/web/2024/https://blog.grimm-co.com/2022/04/no-hardware-no-problem-emulation-and.html",
         description: "GRIMM walks through emulating and exploiting a real embedded device without physical hardware access."
       },
       {
@@ -137,7 +137,7 @@ export const week3: DayData[] = [
     homework: [
       {
         title: "Evaluating IoT Firmware Through Emulation and Fuzzing",
-        url: "https://www.jtsec.es/blog-entry/113/evaluating-iot-firmware-through-emulation-and-fuzzing",
+        url: "https://web.archive.org/web/2024/https://www.jtsec.es/blog-entry/113/evaluating-iot-firmware-through-emulation-and-fuzzing",
         description: "jtsec demonstrates the full pipeline from firmware extraction through QEMU emulation to fuzzing individual binaries for vulnerabilities."
       },
       {
@@ -260,7 +260,7 @@ export const week3: DayData[] = [
       },
       {
         title: "Simulating and Hunting Firmware Vulnerabilities with Qiling",
-        url: "https://blog.vincss.net/2020/12/pt007-simulating-and-hunting-firmware-vulnerabilities-with-Qiling.html",
+        url: "https://web.archive.org/web/2024/https://blog.vincss.net/2020/12/pt007-simulating-and-hunting-firmware-vulnerabilities-with-Qiling.html",
         description: "VinCSS demonstrates using Qiling to find and confirm vulnerabilities in real firmware binaries through dynamic analysis."
       },
       {
@@ -403,7 +403,7 @@ export const week3: DayData[] = [
     homework: [
       {
         title: "Good Enough Emulation: Fuzzing a Single Thread",
-        url: "https://blog.talosintelligence.com/good-enough-emulation/",
+        url: "https://web.archive.org/web/2024/https://blog.talosintelligence.com/good-enough-emulation/",
         description: "Talos Intelligence demonstrates practical network-level analysis on emulated firmware with a focus on fuzzing services."
       },
       {

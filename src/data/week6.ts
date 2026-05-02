@@ -329,7 +329,7 @@ export const week6: DayData[] = [
       },
       {
         title: "ARM64 Assembly with Shellcodes",
-        url: "https://modexp.wordpress.com/2018/10/30/arm64-assembly/",
+        url: "https://web.archive.org/web/2024/https://modexp.wordpress.com/2018/10/30/arm64-assembly/",
         description: "Comprehensive reference on ARM64 assembly and shellcode — covers instructions, syscalls, and encoding needed for writing exploits."
       }
     ],
@@ -497,7 +497,7 @@ export const week6: DayData[] = [
       },
       {
         title: "TP-Link TL-WR940N 1-day Analysis",
-        url: "https://blog.viettelcybersecurity.com/tp-link-tl-wr940n-1-days-analysis-after-story-cve-2022-4363-cve-2022-43635/",
+        url: "https://web.archive.org/web/2024/https://blog.viettelcybersecurity.com/tp-link-tl-wr940n-1-days-analysis-after-story-cve-2022-4363-cve-2022-43635/",
         description: "Viettel Cyber Security's analysis of known TP-Link router vulnerabilities — real-world exploit development on commodity hardware."
       },
       {

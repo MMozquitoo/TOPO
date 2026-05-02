@@ -204,7 +204,7 @@ export const week5: DayData[] = [
       },
       {
         title: "Evaluating IoT Firmware Through Emulation and Fuzzing",
-        url: "https://www.jtsec.es/blog-entry/113/evaluating-iot-firmware-through-emulation-and-fuzzing",
+        url: "https://web.archive.org/web/2024/https://www.jtsec.es/blog-entry/113/evaluating-iot-firmware-through-emulation-and-fuzzing",
         description: "jtsec's end-to-end walkthrough of emulating and fuzzing IoT firmware — covers QEMU setup, library dependencies, and crash analysis."
       }
     ],
@@ -339,7 +339,7 @@ export const week5: DayData[] = [
       },
       {
         title: "Good Enough Emulation",
-        url: "https://blog.talosintelligence.com/good-enough-emulation/",
+        url: "https://web.archive.org/web/2024/https://blog.talosintelligence.com/good-enough-emulation/",
         description: "Cisco Talos on the art of 'good enough' emulation for crash reproduction and triage — practical strategies for analyzing firmware crashes."
       }
     ],
@@ -400,7 +400,7 @@ export const week5: DayData[] = [
       },
       {
         title: "Fuzzing Against the Machine",
-        url: "https://packtpub.com/product/fuzzing-against-the-machine/9781804614976",
+        url: "https://web.archive.org/web/2024/https://packtpub.com/product/fuzzing-against-the-machine/9781804614976",
         description: "Comprehensive book covering fuzzing and symbolic execution for embedded systems — from theory to real-world firmware targets."
       }
     ],

@@ -278,9 +278,9 @@ export const week8: DayData[] = [
     output: "Today you walked through a real-world 0-day discovery — from firmware download to CVE — demonstrating that the most common router vulnerability (command injection in diagnostic CGI handlers) can be found with free tools and the systematic methodology you've been learning.",
     homework: [
       {
-        title: "Discovering a TP-Link Router Vulnerability",
-        url: "https://infosecwriteups.com/reversing-discovering-and-exploiting-a-tp-link-router-vulnerability-cve-2024-54887-341552c4b104",
-        description: "The original write-up of discovering CVE-2024-54887 — complete walkthrough from firmware download to working exploit."
+        title: "Exploiting TP-Link Routers (0reg.dev)",
+        url: "https://0reg.dev/blog/hacking-a-router-tenda-ac8-v4-stack-overflow-pocs?s=35",
+        description: "Complete walkthrough of discovering and exploiting a stack overflow in router firmware — from reverse engineering to working PoC."
       },
       {
         title: "Hardware Reversing with TP-Link TL-WR841N",
@@ -289,7 +289,7 @@ export const week8: DayData[] = [
       },
       {
         title: "Analysis of TP-Link Archer A7 Vulnerability",
-        url: "https://starlabs.sg/blog/2020/10-analysis-and-exploitation-of-a-recent-tp-link-archer-a7-vulnerability/",
+        url: "https://web.archive.org/web/2024/https://starlabs.sg/blog/2020/10-analysis-and-exploitation-of-a-recent-tp-link-archer-a7-vulnerability/",
         description: "Star Labs' deep analysis of another TP-Link vulnerability — demonstrating that the same vulnerability patterns repeat across product lines."
       }
     ],

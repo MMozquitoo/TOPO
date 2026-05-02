@@ -44,3 +44,25 @@ export function saveQuizAnswer(day: number, answer: string) {
   p.quizAnswers[day] = answer;
   saveProgress(p);
 }
+
+export function exportProgress(): string {
+  const p = getProgress();
+  return btoa(JSON.stringify(p));
+}
+
+export function importProgress(code: string): boolean {
+  try {
+    const imported: Progress = JSON.parse(atob(code));
+    if (!Array.isArray(imported.completedDays)) return false;
+    const current = getProgress();
+    const merged: Progress = {
+      completedDays: Array.from(new Set([...current.completedDays, ...imported.completedDays])),
+      quizAnswers: { ...imported.quizAnswers, ...current.quizAnswers },
+      exerciseCompleted: { ...imported.exerciseCompleted, ...current.exerciseCompleted },
+    };
+    saveProgress(merged);
+    return true;
+  } catch {
+    return false;
+  }
+}

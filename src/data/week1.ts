@@ -47,9 +47,9 @@ export const week1: DayData[] = [
         description: "Test your phishing detection skills with real examples curated by Google's security team.",
       },
       {
-        title: "OWASP Phishing Overview",
-        url: "https://owasp.org/www-community/attacks/Phishing",
-        description: "OWASP's reference on phishing attack vectors, techniques, and defenses.",
+        title: "MITRE ATT&CK — Phishing Techniques",
+        url: "https://attack.mitre.org/techniques/T1566/",
+        description: "MITRE ATT&CK's comprehensive reference on phishing sub-techniques, real-world procedures, and mitigations.",
       },
     ],
   },
@@ -104,9 +104,9 @@ export const week1: DayData[] = [
     output: "Today you learned how to recognize social engineering tactics and defend against manipulation by verifying requests through separate channels.",
     homework: [
       {
-        title: "SANS Social Engineering Infographic",
-        url: "https://www.sans.org/security-awareness-training/resources/social-engineering-infographic/",
-        description: "Visual breakdown of social engineering tactics, statistics, and defenses from SANS.",
+        title: "SANS Social Engineering Resources",
+        url: "https://www.sans.org/blog/social-engineering-overview/",
+        description: "SANS overview of social engineering tactics, attacker methodologies, and organizational defenses.",
       },
       {
         title: "Krebs on Security — BEC Scams",

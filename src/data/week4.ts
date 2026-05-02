@@ -138,7 +138,7 @@ export const week4: DayData[] = [
       },
       {
         title: "Disassembling Cortex-M Raw Binary with Ghidra",
-        url: "https://blog.feabhas.com/2022/12/disassembling-a-cortex-m-raw-binary-file-with-ghidra/",
+        url: "https://web.archive.org/web/2024/https://blog.feabhas.com/2022/12/disassembling-a-cortex-m-raw-binary-file-with-ghidra/",
         description: "Practical guide to loading and analyzing ARM Cortex-M raw firmware in Ghidra, including vector table identification."
       }
     ],
@@ -310,7 +310,7 @@ export const week4: DayData[] = [
     homework: [
       {
         title: "Automating Binary Vulnerability Discovery with Ghidra and Semgrep",
-        url: "https://security.humanativaspa.it/automating-binary-vulnerability-discovery-with-ghidra-and-semgrep/",
+        url: "https://web.archive.org/web/2024/https://security.humanativaspa.it/automating-binary-vulnerability-discovery-with-ghidra-and-semgrep/",
         description: "Advanced tutorial on writing automated rules to find vulnerable code patterns in decompiled firmware using Ghidra and Semgrep."
       },
       {

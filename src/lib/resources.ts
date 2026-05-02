@@ -290,7 +290,7 @@ export const resources: Resource[] = [
   {
     id: "blog-pcb-reversing",
     title: "PCB Reverse Engineering: A Comprehensive Guide",
-    url: "https://guidedhacking.com/threads/pcb-reverse-engineering-a-comprehensive-guide.20388/",
+    url: "https://web.archive.org/web/2024/https://guidedhacking.com/threads/pcb-reverse-engineering-a-comprehensive-guide.20388/",
     category: "blog",
     device: ["general"],
     technique: ["hardware-interfaces", "reverse-engineering"],
@@ -301,7 +301,7 @@ export const resources: Resource[] = [
   {
     id: "blog-uart-nec",
     title: "Bypassing Password via UART on NEC Router",
-    url: "https://faradaysec.com/bypassing-password-protection-and-getting-a-shell-through-uart-in-nec-aterm-wr8165n-wi-fi-router/",
+    url: "https://web.archive.org/web/2024/https://faradaysec.com/bypassing-password-protection-and-getting-a-shell-through-uart-in-nec-aterm-wr8165n-wi-fi-router/",
     category: "blog",
     device: ["router"],
     technique: ["hardware-interfaces"],
@@ -470,7 +470,7 @@ export const resources: Resource[] = [
   {
     id: "writeup-lorex-camera",
     title: "Pwn2Own Ireland 2024: Exploiting Lorex Camera",
-    url: "https://blog.infosectcbr.com.au/2024/12/exploiting-lorex-2k-indoor-wifi-at.html",
+    url: "https://web.archive.org/web/2024/https://blog.infosectcbr.com.au/2024/12/exploiting-lorex-2k-indoor-wifi-at.html",
     category: "writeup",
     device: ["camera"],
     technique: ["exploitation"],
@@ -647,7 +647,7 @@ export const resources: Resource[] = [
   {
     id: "book-fuzzing-against-machine",
     title: "Fuzzing Against the Machine",
-    url: "https://www.packtpub.com/product/fuzzing-against-the-machine/9781804614976",
+    url: "https://web.archive.org/web/2024/https://www.packtpub.com/product/fuzzing-against-the-machine/9781804614976",
     category: "book",
     device: ["general", "microcontroller"],
     technique: ["fuzzing", "emulation"],
@@ -1201,7 +1201,7 @@ export const resources: Resource[] = [
   {
     id: "blog-zyxel-zysh-vulns",
     title: "Multiple Vulnerabilities in Zyxel zysh",
-    url: "https://security.humanativaspa.it/multiple-vulnerabilities-in-zyxel-zysh/",
+    url: "https://web.archive.org/web/2024/https://security.humanativaspa.it/multiple-vulnerabilities-in-zyxel-zysh/",
     category: "blog",
     device: ["router"],
     technique: ["exploitation", "reverse-engineering"],
@@ -1729,7 +1729,7 @@ export const resources: Resource[] = [
   {
     id: "blog-ble-smartband-re",
     title: "Reverse Engineer a Bluetooth (BLE) SmartBand",
-    url: "https://medium.com/@shelladdicted/reverse-engineer-a-bluetooth-ble-smartband-91ee10129217",
+    url: "https://web.archive.org/web/2024/https://medium.com/@shelladdicted/reverse-engineer-a-bluetooth-ble-smartband-91ee10129217",
     category: "blog",
     device: ["smart-home"],
     technique: ["wireless", "reverse-engineering"],
@@ -1896,7 +1896,7 @@ export const resources: Resource[] = [
   {
     id: "blog-ghidra-semgrep-vulns",
     title: "Automating Binary Vulnerability Discovery with Ghidra and Semgrep",
-    url: "https://security.humanativaspa.it/automating-binary-vulnerability-discovery-with-ghidra-and-semgrep/",
+    url: "https://web.archive.org/web/2024/https://security.humanativaspa.it/automating-binary-vulnerability-discovery-with-ghidra-and-semgrep/",
     category: "blog",
     device: ["general", "router"],
     technique: ["reverse-engineering", "exploitation"],
@@ -1951,7 +1951,7 @@ export const resources: Resource[] = [
   {
     id: "blog-iot-emulation-fuzzing",
     title: "Evaluating IoT Firmware through Emulation and Fuzzing",
-    url: "https://www.jtsec.es/blog-entry/113/evaluating-iot-firmware-through-emulation-and-fuzzing",
+    url: "https://web.archive.org/web/2024/https://www.jtsec.es/blog-entry/113/evaluating-iot-firmware-through-emulation-and-fuzzing",
     category: "blog",
     device: ["general", "router"],
     technique: ["emulation", "fuzzing"],
@@ -2162,7 +2162,7 @@ export const resources: Resource[] = [
   {
     id: "writeup-tplink-archer-a7",
     title: "Analysis & Exploitation of a TP-Link Archer A7 Vulnerability",
-    url: "https://starlabs.sg/blog/2020/10-analysis-and-exploitation-of-a-recent-tp-link-archer-a7-vulnerability/",
+    url: "https://web.archive.org/web/2024/https://starlabs.sg/blog/2020/10-analysis-and-exploitation-of-a-recent-tp-link-archer-a7-vulnerability/",
     category: "writeup",
     device: ["router"],
     technique: ["exploitation", "reverse-engineering"],
